@@ -7,11 +7,13 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>My portfolio</title>
   <link href="style.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
   </head>
   <body><header class="header">
 <div class="logo">
     Tech by Ishimwe
 </div>
+
     <nav class="navbar">
 <ul class="nav-links">
     <li><a href="#home">Home</a></li>
@@ -22,40 +24,54 @@
     <li><a href="#Contact">Contact</a></li>
 </ul>
 </nav></header>
-<section class="intro">
-          <div class="content">
-          <h1>Hi, I am <span class="highlight">Diane</span></h1><br>
-          <p>Passionate <span class="highlight">software</span> developer <br>from Rwanda</p><br>
-          <button class="hire-btn">Hire me</button>
-        </div>
-        <div class="image">
-          <img src="did.jpg" alt="Diane's Picture">
-        </div>
+<section class="intro" id="home">
+  <div class="slider">
+    <div class="content-slide active">
+      <div class="content">
+        <h1>Hi, I am <span class="highlight">Diane</span></h1><br>
+        <p>Passionate <span class="highlight">software</span> developer <br>from Rwanda</p><br><br><br>
+        <button class="hire-btn">Hire me</button>
       </div>
-  
-      
+      <div class="image">
+        <img src="image/did.jpg" alt="Diane's Picture">
+      </div>
+    </div>
+    <div class="content-slide">
+      <div class="content">
+        <h1>Coding with <span class="highlight">Passion</span></h1><br>
+        <p>Designing with Passion <br>&nbsp; &nbsp; &nbsp; &nbsp;I am <span class="highlight">Diane<br></p><br><br>
+        <button class="hire-btn">Hire me</button>
+      </div>
+      <div class="image">
+        <img src="image/me.jpg" alt="Another Picture">
+      </div>
+    </div>
+    <!-- Add more slides as needed -->
+  </div>
 </section>
+
 
 <div class="stats">
     <div class="stat-item">
       <div class="icon">
-        <img src="award-icon.png" alt="Award Icon">
+        <img src="icon/award.png" alt="Award Icon">
       </div>
       <h2>5</h2>
       <p>Awards</p>
     </div>
     <div class="stat-item">
       <div class="icon">
-        <img src="projects-icon.png" alt="Projects Icon">
+        <img src="icon/project.png" alt="Projects Icon">
       </div>
       <h2>5</h2>
       <p>Projects</p>
     </div>
   </div>
   
+  <section id="about">
   <div class="about-me">
     <div class="about-image">
-      <img src="did.jpg" alt="Diane's Picture">
+      <img src="image/did.jpg" alt="Diane's Picture">
     </div>
     <div class="about-content">
       <h2>ABOUT ME</h2>
@@ -76,9 +92,9 @@
       </ul>
     </div>
   </div>
-  
+  </section>
 
-
+<section id="Skills">
   <div class="skills-section">
     <h2>MY SKILLS</h2>
     <div class="skills-container">
@@ -132,7 +148,9 @@
       </div>
     </div>
   </div>
-  
+  </section>
+
+  <section id="Resume">
   <div class="resume-section">
     <h2>MY RESUME</h2>
     <div class="resume-container">
@@ -157,6 +175,7 @@
         </div>
       </div>
   
+
       <!-- Experience Column -->
       <div class="resume-column">
         <h3>EXPERIENCE</h3>
@@ -184,22 +203,23 @@
       </div>
     </div>
   </div>
-  
+  </section>
+
+  <section id="portfolio">
   <div class="portfolio-section">
     <h2>Portfolio</h2>
     <h3>My works</h3>
     <div class="portfolio-grid">
       <div class="portfolio-item">
-        <img src="ecard.png" alt="Project 1">
+        <img src="image/ecard.png" alt="Project 1">
         <div class="portfolio-hover">
-            <p><h3> Ecard</h3><br></p>
-
+            <h3> Ecard</h3><br>
            <p> Digital card for student which store 
             all information about student.Used as Identity to avoind having many hard cards.</p>
         </div>
       </div>
       <div class="portfolio-item">
-        <img src="club.webp" alt="Project 2">
+        <img src="image/club.webp" alt="Project 2">
         <div class="portfolio-hover">
           <p><h3>Club Management Backend </h3><br>
 
@@ -209,7 +229,7 @@
         </div>
       </div>
       <div class="portfolio-item">
-        <img src="imvunwa.png" alt="Project 3">
+        <img src="image/imvunwa.png" alt="Project 3">
         <div class="portfolio-hover">
           <p>   <h3>Imvunwa Website</h3><br>
             This is website for company which do welding, manufacturing, and electrical services.
@@ -218,16 +238,16 @@
         </div>
       </div>
       <div class="portfolio-item">
-        <img src="alarm.jpg" alt="Project 4">
+        <img src="image/alarm.jpg" alt="Project 4">
         <div class="portfolio-hover">
-          <p><h3></h3>Gate Guard visitor notifie</h3>
+          <p><h3>Gate Guard visitor notifie</h3>
 
             IoT solution that uses a combination of OLED displays, Telegram notifications, and remote control functionality to manage visitor access. When a visitor
              presses a button at the gate, an OLED screen displays their presence.</p>
         </div>
       </div>
       <div class="portfolio-item">
-        <img src="airpollution.jpg" alt="Project 5">
+        <img src="image/airpollution.jpg" alt="Project 5">
         <div class="portfolio-hover">
           <p> <h3>Air Pollution Monitoring<br></h3>
 
@@ -238,9 +258,9 @@
      
     </div>
   </div>
-  
+  </section>
 
-
+<section id="Contact">
   <div class="contact-section">
     <h2>Contact Us</h2>
     <h3>Have a Project?</h3>
@@ -258,8 +278,9 @@
       </div>
       <div class="contact-info">
         <div class="info-item">
+          <div class="icon-square">
           <i class="fas fa-map-marker-alt"></i>
-          <p>My Address<br>Kigali, Rwanda</p>
+          <p>My Address<br>Kigali, Rwanda</p></div>
         </div>
         <div class="info-item">
           <i class="fas fa-phone"></i>
@@ -282,7 +303,8 @@
       </div>
     </div>
   </div>
-  
+  </section>
+
   <footer class="footer-section">
     <div class="footer-container">
       <!-- Left Section -->
@@ -328,6 +350,7 @@
     </div>
   </footer>
   
+  <script src="script.js"></script>
 
   </body> 
   
