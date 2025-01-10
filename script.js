@@ -34,5 +34,4 @@ function showNextSlide() {
 // Change slide every 10 seconds
 setInterval(showNextSlide, slideDuration);  // Change slide every 10 seconds
 
-
  
