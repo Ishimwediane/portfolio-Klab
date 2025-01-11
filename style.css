@@ -32,6 +32,12 @@ body.light-mode button {
 body.light-mode .navbar a {
   color: black;
 }
+body.light-mode .navbar  {
+  color: black;
+ 
+  width: 100%;
+  background-color:whitesmoke ;
+}
 
 body.light-mode header {
   position: fixed;
@@ -71,17 +77,17 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  margin-top: -20px;
   color: white;
   width: 100%;
+  background-color: #222; /* Ensure the background color is set */
 }
 
 .nav-links {
   display: flex;
   gap: 50px;
-  margin-left: 500px;
+  margin-left: auto; /* Adjust alignment */
   font-size: 16px;
-  margin-top: -60px;
 }
 
 .nav-links li {
@@ -99,11 +105,56 @@ header {
   color: #ddd;
 }
 
-.hamburger {
+.menu-icon {
   display: none;
   font-size: 30px;
+  color: white;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #333;
+    padding: 10px;
+    width: calc(100% - 40px); /* Adjust to fit within screen */
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #333;
+    padding: 10px;
+    width: calc(100% - 40px);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
 
 .logo {
   position: relative;
@@ -127,7 +178,6 @@ header {
 body.light-mode .logo::after {
   color: #000;
 }
-
 
 
 
@@ -268,7 +318,7 @@ body.light-mode .logo::after {
 /* For small screens (e.g., mobile devices) */
 @media (max-width: 768px) {
   .intro {
-    height: 600px; /* Adjust height for smaller screens */
+    height: 600px; 
   }
 
   .slider {
@@ -295,10 +345,12 @@ body.light-mode .logo::after {
   }
 
   .image img {
-    width: 80%; /* Make image width responsive */
+    width: 80%; 
     height: auto;
-    margin-left: 0; /* Reset margin */
+    margin-left: 0;
+  margin-top: 20px; 
   }
+  
 
   .stats {
     flex-direction: column; /* Stack stats vertically */
@@ -493,6 +545,7 @@ body.light-mode .logo::after {
     padding: 20px;
     margin-top: 20px;
     gap: 20px;
+    text-align: left;
   }
 
   .about-image {
@@ -502,7 +555,7 @@ body.light-mode .logo::after {
   .about-content {
     margin-left: 0;
     margin-top: 0;
-    text-align: center;
+    text-align:left;
   }
 
   .about-content h2 {
@@ -556,10 +609,11 @@ body.light-mode .logo::after {
     width: 400px;
     height: 450px;
   }
-
+  
   .about-content {
     margin-top: -30px;
     margin-left: 50px;
+    text-align: left;
   }
 
   .about-content h2 {
@@ -933,7 +987,8 @@ body.light-mode .logo::after {
   }
 
   .contact-info {
-    width: 100%; /* Contact info takes full width */
+    
+    display: none;
   }
 
   .contact-section h2 {
@@ -1062,9 +1117,9 @@ body.light-mode .logo::after {
   }
 
   .footer-left, .footer-center, .footer-right {
-    text-align: center; /* Center all text */
-    flex: 1; /* Make all sections take full width */
-    min-width: 0; /* Ensure no minimum width is applied */
+    text-align: center; 
+    flex: 1; 
+    min-width: 0; 
   }
 
   .footer-left h3 {
@@ -1077,16 +1132,16 @@ body.light-mode .logo::after {
   }
 
   .footer-center {
-    display: block; /* Stack the links and social media */
-  }
+    display: block; 
+    }
 
   .footer-links ul, .footer-social ul {
     padding: 0;
-    margin: 10px 0; /* Add margin between lists */
+    margin: 20px 0; 
   }
 
   .footer-links li, .footer-social li {
-    margin: 8px 0; /* Adjust list item margin */
+    margin: 8px 0; 
   }
 
   .footer-right form {

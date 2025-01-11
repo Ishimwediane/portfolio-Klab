@@ -26,12 +26,23 @@ const slides = document.querySelectorAll('.content-slide');
 const slideDuration = 5000;  // 10 seconds
 
 function showNextSlide() {
-  slides[currentSlide].classList.remove('active');  // Hide the current slide
-  currentSlide = (currentSlide + 1) % slides.length;  // Move to the next slide
-  slides[currentSlide].classList.add('active');  // Show the next slide
+  slides[currentSlide].classList.remove('active');  
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');  
 }
 
 // Change slide every 10 seconds
-setInterval(showNextSlide, slideDuration);  // Change slide every 10 seconds
+setInterval(showNextSlide, slideDuration);  
 
- 
+function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('show');
+}
+
+const navItems = document.querySelectorAll('.nav-links a');
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.remove('show');
+    });
+});
