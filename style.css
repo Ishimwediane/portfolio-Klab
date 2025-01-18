@@ -57,6 +57,12 @@ body.light-mode .navbar a:hover {
 body.light-mode .resume-item::before {
   background-color: black;
 }
+body.light-mode .logo::after {
+  content: ' ★'; /* Star next to the logo */
+  font-size: 2rem; /* Adjust size as needed */
+  color: black; /* Star color */
+  margin-left: 5px; /* Space between logo and star */
+}
 
 html {
   scroll-behavior: smooth;
@@ -72,21 +78,34 @@ header {
   padding: 20px;
   z-index: 10;
 }
-
+/* Navbar Styles */
 .navbar {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: -20px;
+  justify-content: space-between; /* Space between logo and nav links */
+  align-items: center; /* Center items vertically */
+ 
+  background-color: #222;
   color: white;
-  width: 100%;
-  background-color: #222; /* Ensure the background color is set */
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #007bff; /* Logo color */
+  cursor: pointer;
+  position: relative; /* Position relative for the star */
+}
+
+.logo::after {
+  content: ' ★'; /* Star next to the logo */
+  font-size: 2rem; /* Adjust size as needed */
+  color: white; /* Star color */
+  margin-left: 5px; /* Space between logo and star */
 }
 
 .nav-links {
   display: flex;
-  gap: 50px;
-  margin-left: auto; /* Adjust alignment */
+  gap: 50px; /* Space between nav items */
+  margin-left: auto; /* Pushes nav links to the right */
   font-size: 16px;
 }
 
@@ -104,40 +123,19 @@ header {
 .nav-links a:hover {
   color: #ddd;
 }
-
-.menu-icon {
+.close-btn{
   display: none;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
+}
+.menu-btn{
+  display: none;
 }
 
-@media (max-width: 768px) {
+/* Responsive Styles */
+@media only screen and (max-width: 1024px) {
   .nav-links {
-    display: none;
+    display: none; /* Hide links by default */
     flex-direction: column;
-    gap: 20px;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: #333;
-    padding: 10px;
-    width: calc(100% - 40px); /* Adjust to fit within screen */
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-}
-@media (max-width: 1024px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 20px;
+    gap: 70px;
     position: absolute;
     top: 60px;
     right: 20px;
@@ -145,44 +143,85 @@ header {
     padding: 10px;
     width: calc(100% - 40px);
   }
-
+  .nav-links.active {
+    display: block; 
+    width: 100%; 
+    position: fixed;
+    top: 60px; 
+    left: 0;
+    background-color: #111;
+    text-align: center;
+    padding-top: 50px;
+    height: 100vh;
+  }
+  body.light-mode .navbar a {
+    color: white;
+  }
   .nav-links.show {
-    display: flex;
+    display: flex; /* Show links when toggled */
   }
 
-  .menu-icon {
-    display: block;
+  .menu-btn {
+    display: block; /* Show menu button on smaller screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 25px;
+    width: 30px;
+    color: #0056b3;
+    font-size: 24px;
+  }
+  .nav-links li {
+    display: block; 
+  
+  }
+ 
+  .nav-links li a {
+    font-size: 18px; 
+    margin: 20px 0; 
+  
   }
 }
 
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block; 
+    margin-left: auto; /* Aligns the menu button to the right */
+    font-size: 24px;
+    color: #007bff; 
+    
+  }
 
-.logo {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  color: #007bff;
-  font-size: 40px;
-  margin-top: -10px;
+  .nav-links.active {
+    display: block; 
+    width: 100%; 
+    position: fixed;
+    top: 60px; 
+    left: 0;
+    background-color: #111;
+    text-align: center;
+    padding-top: 50px;
+    height: 100vh;
+  }
+
+  .nav-links li {
+    display: block; 
+  
+  }
+ 
+  body.light-mode .navbar a {
+    color: white;
+  }
+  .nav-links li a {
+    font-size: 18px; 
+    margin: 20px 0; 
+   
+  }
 }
 
-.logo::after {
-  content: ' ★';
-  font-size: 38px;
-  color: white;
-  top: 10;
-  right: -50px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-body.light-mode .logo::after {
-  color: #000;
-}
-
-
-
-/* INTRODUCTION */
-
+/* Intro Section Styles */
 .intro {
   display: flex;
   align-items: center;
@@ -269,52 +308,49 @@ body.light-mode .logo::after {
   margin-top: -150px;
 }
 
+/* Stats Section */
+.stats {
+  margin-top: 100px;
+  display: flex;
+  justify-content: left;
+  gap: 70px;
+  margin-left: 60px;
+}
 
+.stat-item {
+  text-align: center;
+  background-color: #d9d9d9; 
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-  .stats {
-    margin-top: 100px;
-    display: flex;
-    justify-content: left;
-    gap: 70px;
-   margin-left: 60px;
-    
-  }
-  
-  .stat-item {
-    text-align: center;
-    background-color: #d9d9d9; 
-    border-radius: 8px;
-    width: 250px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .stat-item .icon {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 10px auto;
-    border-radius: 50%; 
-    overflow: hidden;
-   margin-top: -20px;
-  }
-  
-  .stat-item .icon img {
-    width: 100%;
-    height: 100%;
-    
-    object-fit: cover;
-  }
-  
-  .stat-item h2 {
-    font-size: 2rem;
-    margin: 10px 0;
-    color: #000;
-  }
-  
-  .stat-item p {
-    font-size: 1rem;
-    color: #555;
-  }
-  
+.stat-item .icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px auto;
+  border-radius: 50%; 
+  overflow: hidden;
+  margin-top: -20px;
+}
+
+.stat-item .icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stat-item h2 {
+  font-size: 2rem;
+  margin: 10px 0;
+  color: #000;
+}
+
+.stat-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
 /* For small screens (e.g., mobile devices) */
 @media (max-width: 768px) {
   .intro {
@@ -345,12 +381,8 @@ body.light-mode .logo::after {
   }
 
   .image img {
-    width: 80%; 
-    height: auto;
-    margin-left: 0;
-  margin-top: 20px; 
+    display: none;
   }
-  
 
   .stats {
     flex-direction: column; /* Stack stats vertically */
@@ -365,7 +397,7 @@ body.light-mode .logo::after {
 }
 
 /* For larger screens (e.g., tablets and above) */
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
   .intro {
     height: 700px; /* Adjust height for larger screens */
   }
@@ -381,6 +413,7 @@ body.light-mode .logo::after {
   }
 
   .content {
+    margin-left: -100px;
     padding: 100px 150px;
   }
 
@@ -393,8 +426,7 @@ body.light-mode .logo::after {
   }
 
   .image img {
-    width: 450px; /* Increase image width */
-    height: 500px;
+   display: none;
   }
 
   .stats {
@@ -406,6 +438,7 @@ body.light-mode .logo::after {
     width: 250px;
   }
 }
+
 
 /* For very large screens (e.g., large desktops) */
 @media (min-width: 1600px) {

@@ -34,15 +34,27 @@ function showNextSlide() {
 // Change slide every 10 seconds
 setInterval(showNextSlide, slideDuration);  
 
-function toggleMenu() {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('show');
-}
 
-const navItems = document.querySelectorAll('.nav-links a');
-navItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.remove('show');
-    });
+
+
+// Toggle menu visibility and icon change on clicking the hamburger button
+document.querySelector('.menu-btn').addEventListener('click', function() {
+  document.querySelector('.nav-links').classList.toggle('active'); // Toggle the active class on the menu
+});
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.remove('active');
+  document.querySelector('.menu-btn i').classList.remove('active');
+});
+
+document.querySelectorAll('.nav-links li a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+         e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      window.scrollTo({
+          top: target.offsetTop,
+          behavior: 'smooth'
+      });
+      document.querySelector('.nav-links').classList.remove('active');
+      document.querySelector('.menu-btn i').classList.remove('active');
+  });
 });

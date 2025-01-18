@@ -9,16 +9,24 @@
   <title>My portfolio</title>
   <link href="style.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
-  <body><header class="header">
-<div class="logo">
+  <body>
+    <header class="header">
+      <nav class="navbar">
+      <div class="logo">
     Tech by Ishimwe
 </div>
 
-    <nav class="navbar">
+    
       
-      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <button class="menu-btn">
+        <i class="fa fa-bars"></i> <!-- Font Awesome hamburger icon -->
+    </button>
 <ul class="nav-links">
+  <button class="close-btn">
+    <i class="fa fa-times"></i> <!-- Close icon -->
+</button>
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#Skills">Skills</a></li>
@@ -59,7 +67,7 @@
       <div class="icon">
         <img src="icon/award.png" alt="Award Icon">
       </div>
-      <h2>5</h2>
+      <h2>13</h2>
       <p>Awards</p>
     </div>
     <div class="stat-item">
@@ -354,11 +362,6 @@
   </footer>
   
   <script src="script.js"></script>
-<!-- <script>
-  function toggleMenu() {
-  const menu = document.getElementById('menu');
-  menu.classList.toggle('show');
-}
-</script> -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </body> 
-  
+  </html>
